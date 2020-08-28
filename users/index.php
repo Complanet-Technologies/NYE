@@ -1,107 +1,8 @@
-<!DOCTYPE html><html lang="en"> 
-<!-- Mirrored from geniuscript.com/local/admin_1.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Aug 2020 08:49:32 GMT -->
-<head> 
-    <meta charset="UTF-8"> 
-    <title>Admin 1</title>
-     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" /> <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" /> 
-     <link rel="stylesheet" href="assets/libraries/font-awesome/css/font-awesome.min.css" /> <link rel="stylesheet" href="assets/libraries/ionicons-2.0.1/css/ionicons.min.css" /> <!-- Start BOOTSTRAP --> 
-     <link rel="stylesheet" href="assets/libraries/bootstrap/dist/css/bootstrap.min.css" /> <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" /> 
-     <!-- End Bootstrap --> 
-     <!-- Start footable-jquery --> 
-     <link rel="stylesheet" href="assets/libraries/footable-jquery/css/footable.bootstrap.min.css" />
-      <!-- End footable-jquery --> <!-- Start Template files -->
-       <link rel="stylesheet" href="assets/css/admin-local.css" /> 
-       <link rel="stylesheet" href="assets/css/admin-local-media.css" />
-        <!-- End Template files --> <!-- End custom styles --> 
-        <script src="assets/js/modernizr.custom.js"></script> 
-    </head> 
-    <body>
-         <div class="page-wrapper"> 
+<?php include"includes/header.php"?>
              <!-- START mainbar --> 
-             <div class="sidebar"> 
-                 <div class="bar-head">
-                      <div class="logo"> 
-                          <a href="#" class="link">LOCAL</a> 
-                          <a href="#" class="link-mobile">L</a> 
-                        </div> 
-                    </div> 
-                    <div class="widget left-menu">
-                         <button type="button" class="navbar-toggle" id="navigation-toogle"> <span class="sr-only">Toggle navigation</span> 
-                            <span class="icon-bar"></span>
-                             <span class="icon-bar"></span>
-                              <span class="icon-bar"></span> 
-                            </button> 
-                            <ul class="nav-side">
-                                 <li class="active"> 
-                                     <a href="admin_1.html">
-                                         <i class="nav-icon ion-android-color-palette"></i>
-                                         <span class="nav-label">Dashboard</span>
-                                        </a> 
-                                    </li> 
-                                    <li> 
-                                        <a href="admin_2.html">
-                                            <i class="nav-icon ion-android-clipboard"></i>
-                                            <span class="nav-label">My Listings</span>
-                                        </a>
-                                     </li>
-                                      <li> 
-                                          <a href="admin_3.html">
-                                              <i class="nav-icon ion-plus"></i>
-                                              <span class="nav-label">Add listings</span>
-                                            </a> 
-                                        </li> 
-                                        <li>
-                                             <a href="admin_4.html">
-                                                 <i class="nav-icon ion-person"></i>
-                                                 <span class="nav-label">Profile</span>
-                                                </a> 
-                                            </li>
-                                             <li> 
-                                                 <a href="admin_5.html">
-                                                     <i class="nav-icon ion-android-star"></i>
-                                                     <span class="nav-label">Reviews</span>
-                                                    </a> 
-                                                </li> 
-                                                <li class="has_submenu"> 
-                                                    <a href="#">
-                                                        <i class="nav-icon ion-flag"></i>
-                                                        <span class="nav-label">Support</span>
-                                                    </a>
-<ul> 
- <li>
-<a href="#">
-<i class="nav-icon ion-person"></i>
-<span class="nav-label">Sub Example 1</span>
-</a> 
-</li>
- <li>
-  <a href="#"><i class="nav-icon ion-person"></i>
-    <span class="nav-label">Sub Example 2</span>
-</a> 
-</li> 
-</ul> 
-</li> 
-<li> 
-    <a href="#"><i class="nav-icon ion-android-exit"></i>
-        <span class="nav-label">Log Out</span>
-    </a> 
-</li>
-</ul> 
-</div> 
-<div class="copyright">Local&#169;2017. Made in NYC</div>
- </div>
+             <?php include"includes/side_nav.php"?>
  <!-- /.sidebar --> <!-- END mainbar --> <!-- START mainbar --> 
- <div class="mainbar">
-      <div class="bar-head top-bar clearfix">
-           <div class="profile-card pull-right">
-                <a href="#" class="profile-card-image">
-                     <img src="assets/img/pic/agents/agentm-1.jpg" alt=""> 
-                    </a> 
-                    <div class="profile-body"> Angela Devis </div> 
-            </div>
-            <!-- /.profile-card --> 
-            <a href="admin_3.html" class="btn btn-transparent pull-right">Add Listing</a>
-     </div
+ <?php include"includes/main_nav.php"?>
          ><!-- /.top-bar -->
          <div class="mainbar-body">
               <div class="section-shortcut"> 
@@ -145,7 +46,7 @@
      </div> 
     </div> 
     <div class="row swap-md-down"> 
-        <div class="col-lg-9 swap-bottom"> 
+        <div class="col-lg-12 swap-bottom"> 
             <div class="section-reviews">
                  <div class="section-header">
                       <h2 class="title"> Recent Reviews </h2> 
@@ -301,7 +202,7 @@
                          </table> 
                         </div> 
                     </div> 
-                    <div class="col-lg-3 swap-top">
+                    <!-- <div class="col-lg-3 swap-top">
                          <div class="m78 nomargin-md"></div> 
                          <div class="alert-local alert alert-info fade in">
                               <div class="header"> 
@@ -346,41 +247,11 @@
                                              </div>
                                               <div class="alert-body"> Duis sed odio amet nibh vulputate cursus asit amet ellite mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio felis tincidunt auctor elit. </div>
                                              </div>
-                                             </div> 
+                                             </div>  -->
                                             </div> 
                                         </div>
                                      </div>
                                       <!-- END mainbar --> 
                                     </div> 
                                     <!-- Start Jquery --> 
-                                    <script src="assets/js/jquery-2.2.1.min.js">
-                                    </script>
-                                     <script src="assets/libraries/jquery.mobile/jquery.mobile.custom.min.js">
-                                    </script> 
-                                    <!-- End Jquery --> <!-- Start BOOTSTRAP -->
-                                     <script src="assets/libraries/bootstrap/dist/js/bootstrap.min.js">
-                                    </script>
-                                     <script src="assets/js/bootstrap-select.min.js"></script>
-                                     
-                                      <!-- End Bootstrap --> <!-- Start Template files -->
-                                      
-                                      <script src="assets/js/admin-local.js"></script>
-                                      
-                                      <!-- End Template files --> <!-- Start custom styles --> 
-                                      
-                                      <script src="assets/js/jquery.helpers.js" type="text/javascript"></script>
-                                       <!-- End custom styles --> 
-                                       <script src="assets/js/moment-with-locales.min.js" type="text/javascript"></script>
-                                        <script src="assets/js/moment-timezone-with-data.js" type="text/javascript"></script>
-                                        
-                                        <!-- Start footable-jquery -->
-
-                                        <script src="assets/libraries/footable-jquery/js/footable.js"></script> 
-                                        <script src="assets/js/footable_custom.js"></script>
-                                        
-                                        <!-- End footable-jquery --> 
-                                    
-                                    </body>
-                                    
-<!-- Mirrored from geniuscript.com/local/admin_1.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Aug 2020 08:49:51 GMT -->
-</html>
+    <?php include"includes/footer.php"?>

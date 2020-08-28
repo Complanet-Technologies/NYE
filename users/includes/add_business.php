@@ -1,140 +1,104 @@
-<!DOCTYPE html><html lang="en"> 
-<!-- Mirrored from geniuscript.com/local/admin_3.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Aug 2020 08:50:55 GMT -->
-<head> 
-    <meta charset="UTF-8">
-     <title>Admin 3</title> 
-     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> 
-     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" /> 
-     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" /> 
-     <link rel="stylesheet" href="assets/libraries/font-awesome/css/font-awesome.min.css" /> 
-     <link rel="stylesheet" href="assets/libraries/ionicons-2.0.1/css/ionicons.min.css" />
-      <!-- Start BOOTSTRAP --> 
-      <link rel="stylesheet" href="assets/libraries/bootstrap/dist/css/bootstrap.min.css" /> 
-      <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" />
-       <!-- End Bootstrap --> 
-      <link rel="stylesheet" href="assets/css/map.css" />
-       <!-- Start Template files --> 
-      <link rel="stylesheet" href="assets/css/admin-local.css" /> 
-      <link rel="stylesheet" href="assets/css/admin-local-media.css" /> 
-      <!-- End Template files --> 
-      <!-- End custom styles --> 
-      <script src="assets/js/modernizr.custom.js">
-    </script> 
-    </head> 
-    <body>
-         <div class="page-wrapper">
-              <!-- START mainbar -->
-               <div class="sidebar"> 
-                   <div class="bar-head"> 
-                       <div class="logo"> 
-                           <a href="#" class="link">LOCAL</a> 
-                           <a href="#" class="link-mobile">L</a> 
-                        </div> 
-                    </div> 
-                    <div class="widget left-menu"> 
-                        <button type="button" class="navbar-toggle" id="navigation-toogle"> 
-                            <span class="sr-only">Toggle navigation</span> 
-                            <span class="icon-bar"></span> 
-                            <span class="icon-bar"></span> 
-                            <span class="icon-bar"></span> 
-                        </button> 
-                        <ul class="nav-side"> 
-                            <li> 
-                                <a href="admin_1.html">
-                                <i class="nav-icon ion-android-color-palette"></i>
-                                <span class="nav-label">Dashboard</span>
-                            </a> 
-                            </li> 
-                            <li> 
-                                <a href="admin_2.html">
-                                    <i class="nav-icon ion-android-clipboard"></i>
-                                    <span class="nav-label">My Listings</span>
-                                </a> 
-                            </li> 
-                            <li class="active"> 
-                                <a href="admin_3.html">
-                                    <i class="nav-icon ion-plus"></i>
-                                    <span class="nav-label">Add listings</span>
-                                </a> 
-                            </li>
-                                 <li>
-                                    <a href="admin_4.html">
-                                        <i class="nav-icon ion-person"></i>
-                                        <span class="nav-label">Profile</span>
-                                    </a> 
-                                </li> 
-                                <li> 
-                                    <a href="admin_5.html">
-                                        <i class="nav-icon ion-android-star"></i>
-                                        <span class="nav-label">Reviews</span>
-                                    </a> 
-                                </li> 
-                                <li class="has_submenu"> 
-                                    <a href="#"><i class="nav-icon ion-flag"></i>
-                                        <span class="nav-label">Support</span>
-                                    </a> 
-                                    <ul> 
-                                        <li> 
-                                            <a href="#">
-                                                <i class="nav-icon ion-person"></i>
-                                                <span class="nav-label">Sub Example 1</span>
-                                            </a> 
-                                        </li> 
-                                        <li>
-                                            <a href="#"><i class="nav-icon ion-person"></i>
-                                                <span class="nav-label">Sub Example 2</span>
-                                            </a> 
-                                        </li> 
-                                    </ul> 
-                                </li> 
-                                <li> 
-                                    <a href="#">
-                                        <i class="nav-icon ion-android-exit"></i>
-                                        <span class="nav-label">Log Out</span>
-                                    </a> 
-                                </li> 
-                            </ul> 
-                        </div> 
-                        <div class="copyright">Local&#169;2017. Made in NYC</div> 
-                    </div>
-                    <!-- /.sidebar -->
-                    <!-- END mainbar -->
-                    <!-- START mainbar --> 
-                    <div class="mainbar">
-                        <div class="bar-head top-bar clearfix"> 
-                            <div class="profile-card pull-right"> 
-                                <a href="#" class="profile-card-image"> 
-                                    <img src="assets/img/pic/agents/agentm-1.jpg" alt=""> 
-                                </a> 
-                                <div class="profile-body"> Angela Devis </div> 
-                            </div>
-                            <!-- /.profile-card --> 
-                            <a href="admin_3.html" class="btn btn-transparent pull-right">Add Listing</a> 
-                        </div>
+
                         <!-- /.top-bar --> 
                         <div class="mainbar-body"> 
                             <div class="section-form section"> 
                                 <div class="section-header"> 
-                                    <h2 class="title"> Main Info </h2> 
+                                    <h2 class="title"> Add Business</h2> 
                                 </div> 
                                 <div class="box-content"> 
-                                    <form> 
+
+                                	<?php 
+
+                                	 	if (isset($_POST['submit'])) {
+                                	 		
+                                	 			$businessName = $_POST['businessName'];
+                                	 			$businessCategory = $_POST['businessCategory'];
+												$businessEmail = $_POST['businessEmail'];
+												$businessAddress = $_POST['businessAddress'];
+												$businessPhoneNo = $_POST['businessPhoneNo'];
+												$businessDescription = $_POST['businessDescription'];
+
+                                	 			$businessImage = $_FILES['businessImage']['name'];
+                                	 			$tmpBusinessImage = $_FILES['businessImage']['tmp_name'];
+
+                                	 			if ($businessImage != '') {
+			
+													$ext = pathinfo($businessImage, PATHINFO_EXTENSION);
+													$allowed = ['png','jpg','jpeg'];
+
+													if (in_array($ext, $allowed)) {
+														
+														$path = './uploads/';
+
+														move_uploaded_file($tmpBusinessImage,($path.$businessImage));
+
+												$daysOpen = $_POST['daysOpen'];
+
+
+												$businessName = mysqli_real_escape_string($conn, $businessName);
+												$businessCategory = mysqli_real_escape_string($conn, $businessCategory);
+												$businessEmail = mysqli_real_escape_string($conn, $businessEmail);
+												$businessAddress = mysqli_real_escape_string($conn, $businessAddress);
+												$businessPhoneNo = mysqli_real_escape_string($conn, $businessPhoneNo);
+												$businessDescription = mysqli_real_escape_string($conn, $businessAddress);
+												$daysOpen = mysqli_real_escape_string($conn, $daysOpen);
+
+
+												$query = "INSERT INTO `business`(`bus_name`, `bus_category`, `bus_cat_id`, `bus_email`, `bus_add`, `bus_image`, `bus_contact`, `business_descrip`, `open_days`, `business_status`) ";
+
+												$query .= "VALUES ('{$businessName}','{$businessCategory}',0,'{$businessEmail}','{$businessAddress}','{$businessImage}','{$businessPhoneNo}','{$businessDescription}','{$daysOpen}','Unapproved') ";
+
+
+												$result = mysqli_query($conn,$query);
+
+												if (!$result) {
+
+													die("Server unable to receive details submitted" . mysqli_error($conn));
+
+												}else{
+
+													echo "details submitted successfully";
+												}
+
+
+													}else{
+
+														echo "incorrect file extension";
+													}
+										        }
+										    }
+
+
+
+
+                                	?>
+                                    <form action="" method="post" enctype="multipart/form-data"> 
                                         <div class="form-section"> 
                                             <div class="row"> 
-                                                <div class="col-md-4"> 
+                                                <div class="col-md-7"> 
                                                     <div class="form-group"> 
-                                                        <label for="fieldListingName">Listing Name</label> <input type="text" class="form-control" id="fieldListingName" placeholder="Your Listing name"> </div> 
+                                                        <label for="fieldListingName">Listing Name</label> 
+                                                        <input type="text" name="businessName" class="form-control" id="fieldListingName" placeholder="Your Listing name"> </div> 
                                                     </div> 
-                                                    <div class="col-md-4"> 
+                                                    <div class="col-md-5"> 
                                                         <div class="form-group"> 
-                                                            <label for="fieldCategory">Category</label> <select id="fieldCategory" class="form-control"> <option>Choose Your Business Category</option> <option>House</option> <option>Flat</option> 
-                                                            </select> </div> </div> <div class="col-md-4"> <div class="form-group"> 
-                                                                <label for="fieldKeywords">Keywords 
-                                                                    <span class="option">(optional)</span>
-                                                                </label> 
+                                                            <label for="fieldCategory">Business Category</label> 
+                                                            <select id="fieldCategory" name="businessCategory" class="form-control"> 
+                                                            	<option value="none">Choose Your Business Category</option> 
+                                                            	<option value="agriculture">Agricultre</option> 
+                                                            	<option value="realestate">Real estate</option>
+                                                            	<option value="IT">IT</option> 
+                                                            </select> 
+                                                        </div> 
+                                                    </div> 
+                                                    <!-- <div class="col-md-4"> 
+                                                    	<div class="form-group"> 
+                                                            <label for="fieldKeywords">Keywords 
+                                                                <span class="option">(optional)</span>
+                                                            </label> 
                                                                 <input type="text" class="form-control" id="fieldKeywords" placeholder="Enter Keywords"> 
                                                             </div> 
-                                                        </div> 
+                                                        </div> --> 
                                                     </div> 
                                                 </div> 
                                                 <div class="form-section"> 
@@ -144,7 +108,7 @@
                                                                 <label for="input_file1">Gallery Images 
                                                                     <span class="option">(optional)</span>
                                                                 </label> 
-                                                                <input type="file" class="hidden" id="input_file1"> 
+                                                                <input type="file" name="businessImage" class="hidden" id="input_file1"> 
                                                                 <button type="button" class="btn btn-danger btn-lg btn-block btn-local-danger" data-inputype-file="input_file1">
                                                                     Browse Files
                                                                 </button> 
@@ -157,11 +121,11 @@
                                                         <div class="col-md-6"> 
                                                             <div class="form-group"> 
                                                                 <label for="fieldPhone">Phone</label> 
-                                                                <input type="text" class="form-control" id="fieldPhone" placeholder="(310) 317-9140"> </div> 
+                                                                <input type="text" name="businessPhoneNo" class="form-control" id="fieldPhone" placeholder="(234)701 635-3712"> </div> 
                                                             </div> 
                                                             <div class="col-md-6"> 
                                                                 <div class="form-group"> 
-                                                                    <label for="fieldWebsite">Website</label> <input type="text" class="form-control" id="fieldWebsite" placeholder="//"> 
+                                                                    <label for="fieldWebsite">Email</label> <input type="email" class="form-control" name="businessEmail" id="fieldEmail" placeholder="example@email.com"> 
                                                                 </div> 
                                                             </div> 
                                                         
@@ -171,16 +135,35 @@
                                                         <div class="col-md-12"> 
                                                             <div class="form-group"> 
                                                                 <label for="fieldDesription">Desription</label> 
-                                                                <textarea class="form-control" id="fieldDesription" rows="8">
-
-                                                                </textarea> 
+                                                                <textarea class="form-control" name="businessDescription" id="fieldDesription" rows="8"></textarea> 
                                                             </div> 
                                                         </div> 
                                                     </div> 
+                                                    <div class="row"> 
+                                                        <div class="col-md-6"> 
+                                                            <div class="form-group"> 
+                                                                <label for="inputAddress">Location</label> 
+                                                                <input type="text" name="businessAddress" class="form-control" id="inputAddress" placeholder="e.g. street Name,City,State."> 
+                                                            </div> 
+                                                        </div>
+
+                                                        <div class="col-md-6"> 
+                                                                <div class="form-group"> 
+                                                                	<label for="inputAddress">Days Open</label>
+                                                                    <input type="text" name="daysOpen" class="form-control" placeholder="e.g. Monday-Friday">            </div> 
+                                                        </div>
+                                                    </div> 
+                                                    <div class="row">
+                                                        <div class="col-md-12 ">
+                                                        	<div class="form-group">
+                                                        		<button type="submit" name="submit" class="btn btn-lg btn-danger btn-local-danger">Add Listings</button>
+                                                        	</div>
+                                                        </div>
+                                                    </div>	
                                                 </form> 
                                             </div> 
                                         </div> 
-                                        <div class="section-form section"> 
+                                        <!-- <div class="section-form section"> 
                                             <div class="section-header"> 
                                                 <h2 class="title"> Location </h2> 
                                             </div> 
@@ -208,8 +191,8 @@
                                                         </div> l
                                                     </form> 
                                                 </div> 
-                                            </div> 
-                                            <div class="section-form section"> 
+                                            </div>  -->
+                                            <!-- <div class="section-form section"> 
                                                 <div class="section-header"> 
                                                     <h2 class="title"> Open Hours </h2> 
                                                 </div> <div class="box-content"> 
@@ -320,39 +303,6 @@
                                                     </div> 
                                                 </form> 
                                             </div> 
-                                        </div> 
+                                        </div>  -->
                                     </div> 
                                 </div> 
-                                <!-- END mainbar --> 
-                            </div> 
-                            <!-- Start Jquery --> 
-
-                            <script src="assets/js/jquery-2.2.1.min.js"></script> 
-
-                            <script src="assets/libraries/jquery.mobile/jquery.mobile.custom.min.js"></script> 
-
-                            <!-- End Jquery --> 
-
-                            <!-- Start BOOTSTRAP --> 
-
-                            <script src="assets/libraries/bootstrap/dist/js/bootstrap.min.js"></script> 
-
-                            <script src="assets/js/bootstrap-select.min.js"></script> 
-
-                            <!-- End Bootstrap --> 
-                            
-                            <!-- Start JS MAP --> 
-                            <script src="http://maps.googleapis.com/maps/api/js?v=3&amp;libraries=weather,geometry,visualization,places,drawing&amp;&amp;key=AIzaSyD95zDTtfBmAopNLYu3nBKVTLEBanURbM8" type="text/javascript"></script> 
-                            <script type="text/javascript" src="assets/js/map_infobox.js"></script> 
-                            <script type="text/javascript" src="assets/js/markerclusterer.js"></script> 
-                            <script src="assets/js/map.js" type="text/javascript"></script> 
-                            <script src='assets/js/gmap3/gmap3.min.js'></script> 
-                            <!-- End JS MAP --> <!-- Start Template files --> 
-                            <script src="assets/js/admin-local.js"></script> 
-                            <!-- End Template files --> <!-- Start custom styles --> 
-                            <script src="assets/js/jquery.helpers.js" type="text/javascript"></script> 
-                            <!-- End custom styles --> <script src="assets/js/moment-with-locales.min.js" type="text/javascript"></script> 
-                            <script src="assets/js/moment-timezone-with-data.js" type="text/javascript"></script> 
-                        </body>
-<!-- Mirrored from geniuscript.com/local/admin_3.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Aug 2020 08:51:02 GMT -->
-</html>
