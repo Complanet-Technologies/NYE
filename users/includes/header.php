@@ -1,5 +1,14 @@
-<?php ob_start()?>
-<?php include"../db_config.php"?>
+<?php 
+ob_start();
+
+session_start();
+include "../db_config.php";
+if (isset($_SESSION['email'])){
+
+include "./includes/status_check.php";
+
+//include "functions.php";
+?>
 <!DOCTYPE html><html lang="en"> 
 <!-- Mirrored from geniuscript.com/local/admin_1.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Aug 2020 08:49:32 GMT -->
 <head> 
@@ -18,3 +27,9 @@
         <script src="assets/js/modernizr.custom.js"></script> 
     </head> 
     <body>
+
+    <?php 
+    } else{
+        echo "<script>location.href='../index.php'</script>";
+    }
+    ?>

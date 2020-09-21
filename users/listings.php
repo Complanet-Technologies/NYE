@@ -7,7 +7,6 @@
                    <?php include"includes/main_nav.php"?>
                         <!-- /.top-bar --> 
                         
-
                         <?php
 
                             if (isset($_GET['source'])) {
@@ -25,48 +24,20 @@
                                 include "includes/add_business.php";
                                 break;
 
+                                case'edit_business':
+                                include "includes/edit_business.php";
+                                break;
+
+                                case'all_business':
+                                header("Location: all_businesses.php");
+                                break;
+
                                 default:
                                 header("Location: view_all_listings.php");
                                 break;
                             }
 
-
-
-
-
-
                         ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                                 </div> 
                                 <!-- END mainbar --> 

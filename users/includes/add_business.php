@@ -12,7 +12,8 @@
                                 	 	if (isset($_POST['submit'])) {
                                 	 		
                                 	 			$businessName = $_POST['businessName'];
-                                	 			$businessCategory = $_POST['businessCategory'];
+                                	 			// $businessCategory = $_POST['businessCategory'];
+                                                $businessCategory = $_POST['businessCategory'];
 												$businessEmail = $_POST['businessEmail'];
 												$businessAddress = $_POST['businessAddress'];
 												$businessPhoneNo = $_POST['businessPhoneNo'];
@@ -33,6 +34,8 @@
 														move_uploaded_file($tmpBusinessImage,($path.$businessImage));
 
 												$daysOpen = $_POST['daysOpen'];
+                                                $businessWebsite = $_POST['businessWebsite'];
+
 
 
 												$businessName = mysqli_real_escape_string($conn, $businessName);
@@ -40,13 +43,15 @@
 												$businessEmail = mysqli_real_escape_string($conn, $businessEmail);
 												$businessAddress = mysqli_real_escape_string($conn, $businessAddress);
 												$businessPhoneNo = mysqli_real_escape_string($conn, $businessPhoneNo);
-												$businessDescription = mysqli_real_escape_string($conn, $businessAddress);
+												$businessDescription = mysqli_real_escape_string($conn, $businessDescription);
 												$daysOpen = mysqli_real_escape_string($conn, $daysOpen);
+                                                $businessWebsite= mysqli_real_escape_string($conn, $businessWebsite);
 
 
-												$query = "INSERT INTO `business`(`bus_name`, `bus_category`, `bus_cat_id`, `bus_email`, `bus_add`, `bus_image`, `bus_contact`, `business_descrip`, `open_days`, `business_status`) ";
 
-												$query .= "VALUES ('{$businessName}','{$businessCategory}',0,'{$businessEmail}','{$businessAddress}','{$businessImage}','{$businessPhoneNo}','{$businessDescription}','{$daysOpen}','Unapproved') ";
+												$query = "INSERT INTO `business`(`bus_name`, `bus_category`, `bus_email`, `bus_add`, `bus_image`, `bus_contact`, `business_descrip`, `open_days`, `bus_status`) ";
+
+												$query .= "VALUES ('{$businessName}','{$businessCategory}','{$businessEmail}','{$businessAddress}','{$businessImage}','{$businessPhoneNo}','{$businessDescription}','{$daysOpen}','{$businessWebsite}','Unapproved') ";
 
 
 												$result = mysqli_query($conn,$query);
@@ -83,11 +88,25 @@
                                                     <div class="col-md-5"> 
                                                         <div class="form-group"> 
                                                             <label for="fieldCategory">Business Category</label> 
-                                                            <select id="fieldCategory" name="businessCategory" class="form-control"> 
-                                                            	<option value="none">Choose Your Business Category</option> 
-                                                            	<option value="agriculture">Agricultre</option> 
-                                                            	<option value="realestate">Real estate</option>
-                                                            	<option value="IT">IT</option> 
+                                                            <select id="fieldCategory" name="businessCategory" class="form-control">
+                                                                <option value='none'>Choose Your Business Category</option>
+                                                            <?php
+                                                                $query = "SELECT * FROM business_category";
+                                                                $select_cat_query = mysqli_query($conn,$query);
+
+                                                                while ($row = mysqli_fetch_assoc($select_cat_query)) {
+                                                                    // $cat_id = $row['cat_id'];
+                                                                    $category = $row['category'];
+
+                                                            
+                                                            	echo "
+                                                                        <option value='$category'>$category</option>  
+
+                                                                    ";
+                                                            	
+                                                                }
+                                                            ?>
+
                                                             </select> 
                                                         </div> 
                                                     </div> 
@@ -103,7 +122,7 @@
                                                 </div> 
                                                 <div class="form-section"> 
                                                     <div class="row"> 
-                                                        <div class="col-md-12"> 
+                                                        <div class="col-md-6"> 
                                                             <div class="form-group"> 
                                                                 <label for="input_file1">Gallery Images 
                                                                     <span class="option">(optional)</span>
@@ -113,7 +132,13 @@
                                                                     Browse Files
                                                                 </button> 
                                                             </div> 
-                                                        </div> 
+                                                        </div>
+                                                       <div class="col-md-6"> 
+                                                            <div class="form-group"> 
+                                                             <label for="fieldPhone">Website Url</label> 
+                                                            <input type="text" name="businessWebsite" class="form-control" placeholder="https://www.example.com">
+                                                            </div> 
+                                                        </div>
                                                     </div> 
                                                 </div> 
                                                 <div class="form-section"> 
@@ -135,7 +160,8 @@
                                                         <div class="col-md-12"> 
                                                             <div class="form-group"> 
                                                                 <label for="fieldDesription">Desription</label> 
-                                                                <textarea class="form-control" name="businessDescription" id="fieldDesription" rows="8"></textarea> 
+                                                                <h5>Note: Make your business description as short as possible.</h5>
+                                                                <textarea class="form-control" name="businessDescription" id="fieldDesription" cols="3" rows="4"></textarea> 
                                                             </div> 
                                                         </div> 
                                                     </div> 
@@ -150,7 +176,8 @@
                                                         <div class="col-md-6"> 
                                                                 <div class="form-group"> 
                                                                 	<label for="inputAddress">Days Open</label>
-                                                                    <input type="text" name="daysOpen" class="form-control" placeholder="e.g. Monday-Friday">            </div> 
+                                                                    <input type="text" name="daysOpen" class="form-control" placeholder="e.g. Monday-Friday">            
+                                                                </div> 
                                                         </div>
                                                     </div> 
                                                     <div class="row">

@@ -1,4 +1,4 @@
-<?php include "users/users_signup.php";?>
+<?php include "users/includes/users_signup.php";?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <script src="https://js.paystack.co/v1/inline.js"></script>
 
    <!-- CSS here -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -49,12 +50,12 @@
                         <div class="main-menu f-right d-none d-lg-block">
                             <nav>
                                 <ul id="navigation">
-                                <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About </a></li> 
-                                    <li><a href="#">Members</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="contact.html">Businesses</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="index.php">Home</a></li>
+                                    <li><a href="about.php">About </a></li> 
+                                    <li><a href="members.php">Members</a></li>
+                                    <li><a href="blog.php">Blog</a></li>
+                                    <li><a href="businesses.php">Businesses</a></li>
+                                    <li><a href="contact.php">Contact Us</a></li>
                                 </ul>
                             </nav>
                         </div>          
@@ -96,7 +97,7 @@
                         <h2 class="contact-title">Get in Touch</h2>
                     </div> -->
                     <div class="col-lg-8">
-                        <form class="form-contact contact_form" method="post" enctype= "Multipart/form-data" action="signup.php" method="post">
+                        <form class="form-contact contact_form" method="post" enctype= "Multipart/form-data" action="" method="post">
                             <div class="row">
                                 
                                 <div class="col-sm-6">
@@ -116,7 +117,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" pattern="[0-9]+" title="Numbers only" required name="phone_nonye" id="email" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone Number'" placeholder="Phone Number">
+                                        <input class="form-control valid" pattern="[0-9]+" title="Numbers only" required name="phone_nonye" id="phone" type="tel" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone Number'" placeholder="Phone Number">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -131,11 +132,17 @@
                                 </div>
 
                             </div>
-                            <div class="form-group mt-3">
-                                <button type="submit" name="signupnye" class="button button-contactForm boxed-btn">Make Payment</button>
+                            <div>
+                            <div class="form-group mt-3" style="float:left;">
+                                <button type="submit" name="signupnye" onclick="" class="button button-contactForm boxed-btn">Sign Up</button>
                             </div>
-                            <a href="login.php" style="color:aqua;">Login</a>
+                            <!-- <div class="form-group mt-3" style="float:left; margin-left:4%">
+                                <button type="submit" name="signup_paynye" onclick="" class="button button-contactForm boxed-btn">Pay Now</button>
+                            </div> -->
+                            </div>
+                            
                         </form>
+                        
                     </div>
                     <div class="col-lg-3 offset-lg-1">
                         <div class="media contact-info">
@@ -162,14 +169,15 @@
             </div>
         </section>
         <!-- Contact Area End -->
-        <!-- Want To work 02-->
+        <!--? Want To work 02-->
         <section class="wantToWork-area">
             <div class="container">
                 <div class="wants-wrapper w-padding2">
                     <div class="row justify-content-between">
                         <div class="col-xl-8 col-lg-8 col-md-7">
                             <div class="wantToWork-caption wantToWork-caption2">
-                         
+                                <img src="" alt=" NACIMA logo" class="mb-20">
+                                <p>Connect with us</p>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-5">
@@ -185,7 +193,7 @@
             </div>
         </section>
         <!-- Want To work End -->
-        <!-- Want To work 01-->
+        <!--? Want To work 01-->
         <section class="wantToWork-area">
             <div class="container">
                 <div class="wants-wrapper">
@@ -195,15 +203,20 @@
                                 <div class="main-menu2">
                                     <nav>
                                         <ul>
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="index.php">Home</a></li>
+                                            <li><a href="about.php">About </a></li> 
+                                            <li><a href="members.php">Members</a></li>
+                                            <li><a href="blog.php">Blog</a></li>
+                                            <li><a href="businesses.php">Businesses</a></li>
+                                            <li><a href="contact.php">Contact Us</a></li>
                                         </ul>
                                     </nav>
                                 </div>
                             </div>
                         </div>
-
+                        <div class="col-xl-2 col-lg-3 col-md-4">
+                            <a href="signup.php" class="btn f-right sm-left">Sign Up</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -271,9 +284,10 @@
       <script src="./assets/js/mail-script.js"></script>
       <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
       
-      <!-- Jquery Plugins, main Jquery -->	
+      <!-- Jquery Plugins, main Jquery -->  
       <script src="./assets/js/plugins.js"></script>
       <script src="./assets/js/main.js"></script>
+      <script src="./assets/js/pay.js"></script>
 
      
     </body>

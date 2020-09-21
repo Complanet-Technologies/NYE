@@ -12,7 +12,7 @@
                               <a href="#" class="shortcut-btn"></a>
                                <div class="box-shortcut-body">
                                     <span class="count color-green">15</span>
-                                    <span class="title">Active</span> 
+                                    <span class="title">Active Listings</span> 
                                 </div> 
                             </div> 
                         </div>
@@ -21,7 +21,7 @@
                      <a href="#" class="shortcut-btn"></a> 
                      <div class="box-shortcut-body">
                          <span class="count color-yellow">15</span>
-                         <span class="title">Pending</span>
+                         <span class="title">Inactive Listings</span>
                     </div> 
                 </div> 
             </div> 
@@ -30,7 +30,7 @@
                      <a href="#" class="shortcut-btn"></a> 
                      <div class="box-shortcut-body">
                          <span class="count color-red">7</span>
-                         <span class="title">Expired</span>
+                         <span class="title">Transactions</span>
                     </div> 
                 </div> 
             </div> 

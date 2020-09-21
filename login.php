@@ -1,261 +1,114 @@
-<?php include "users_login.php";?>
-<!doctype html>
-<html class="no-js" lang="zxx">
+<?php include "users/includes/users_login.php"; ?>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>NYE Log in</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-
-   <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/slicknav.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/hamburgers.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/nice-select.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="users/user_login_signin/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="users/user_login_signin/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="users/user_login_signin/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="users/user_login_signin/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="users/user_login_signin/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="users/user_login_signin/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="users/user_login_signin/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="users/user_login_signin/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="users/user_login_signin/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="users/user_login_signin/css/util.css">
+	<link rel="stylesheet" type="text/css" href="users/user_login_signin/css/main.css">
+<!--===============================================================================================-->
 </head>
-    <!--? Preloader Start -->
-    <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/loder.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Preloader Start -->
-    <header>
-        <!-- Header Start -->
-        <div class="header-area header-transparent">
-            <div class="main-header header-sticky">
-                <div class="container-fluid">
-                    <div class="menu-wrapper d-flex align-items-center justify-content-between">
-                        <!-- Logo -->
-                        <div class="logo">
-                            <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
-                        </div>
-                        <!-- Main-menu -->
-                        <div class="main-menu f-right d-none d-lg-block">
-                            <nav>
-                                <ul id="navigation">
-                                <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About </a></li> 
-                                    <li><a href="#">Members</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="contact.html">Businesses</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                </ul>
-                            </nav>
-                        </div>          
-                        <!-- Header-btn -->
-                        <div class="header-btns d-none d-lg-block f-right">
-                            <a href="#" class="mr-40"><i class="ti-user"></i> Log in</a>
-                            <a href="signup.php" class="btn">Sign Up</a>
-                        </div>
-                        <!-- Mobile Menu -->
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Header End -->
-     </header>
-    <main>
-        <!--? Hero Start -->
-        <div class="slider-area2">
-            <div class="slider-height3  hero-overly hero-bg4 d-flex align-items-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="hero-cap2 pt-20 text-center">
-                                <h2>Log in</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--?  Contact Area start  -->
-        <section class="contact-section">
-            <div class="container">
-                <div class="row">
-                    <!-- <div class="col-12">
-                        <h2 class="contact-title">Get in Touch</h2>
-                    </div> -->
-                    <div class="col-lg-8">
-        
-                        <form class="form-contact contact_form" action="login.php" method="post">
-                            <div class="row">
-                                
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <input class="form-control valid" required name="email_addressnye" id="name" type="email" placeholder="Enter email address">
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <input class="form-control valid" required name="passwordnye" id="email" type="password" placeholder="Your password">
-                                    </div>
-                                </div>
-                                <button type="submit" name="nye_login" class="button button-contactForm boxed-btn">log in</button>
+<body>
+	
+	<div class="limiter" >
+		<div class="container-login100" style="margin:auto;width: 70%;box-shadow:0px 0px 10px 10px black">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<form class="" action="login.php" method="post">
+					<span class="login100-form-title p-b-49">
+						Login
+					</span>
 
-                            </div>
-                            <div class="form-group mt-3">
-                                
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-lg-3 offset-lg-1">
-                        <div class="media contact-info">
-                            <span class="contact-info__icon"><i class="ti-home"></i></span>
-                            <div class="media-body">
-                                <h3>Abeokuta,</h3>
-                                <p>Ogun, Nigeria</p>
-                            </div>
-                        </div>
-                        <div class="media contact-info">
-                            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
-                            <div class="media-body">
-                                <h3>+234 817......</h3>
-                            </div>
-                        </div>
-                        <div class="media contact-info">
-                            <span class="contact-info__icon"><i class="ti-email"></i></span>
-                            <div class="media-body">
-                                <h3>support@nye.com</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Contact Area End -->
-        <!-- Want To work 02-->
-        <section class="wantToWork-area">
-            <div class="container">
-                <div class="wants-wrapper w-padding2">
-                    <div class="row justify-content-between">
-                        <div class="col-xl-8 col-lg-8 col-md-7">
-                            <div class="wantToWork-caption wantToWork-caption2">
-                         
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-5">
-                            <div class="footer-social f-right sm-left">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Want To work End -->
-        <!-- Want To work 01-->
-        <section class="wantToWork-area">
-            <div class="container">
-                <div class="wants-wrapper">
-                    <div class="row align-items-center justify-content-between">
-                        <div class="col-xl-7 col-lg-9 col-md-8">
-                            <div class="wantToWork-caption wantToWork-caption2">
-                                <div class="main-menu2">
-                                    <nav>
-                                        <ul>
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is required">
+						<span class="label-input100">Email</span>
+						<input class="input100" type="email" name="email_addressnye" placeholder="Type your Email">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
 
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Want To work End -->
-    </main>
-    <footer>
-        <div class="footer-wrapper pt-30">
-            <!-- footer-bottom -->
-            <div class="footer-bottom-area">
-                <div class="container">
-                    <div class="footer-border">
-                        <div class="row d-flex justify-content-between align-items-center">
-                            <div class="col-xl-10 col-lg-9 ">
-                                <div class="footer-copy-right">
-                                    <p>
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | made by <a href="https://complanettechnologies.com.ng" target="_blank">Complanet Technologies</a>
-  </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Scroll Up -->
-    <div id="back-top" >
-        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
-    </div>
-      <!-- JS here -->
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="passwordnye" placeholder="Type your password">
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
+					</div>
+					
+					<div class="text-right p-t-8 p-b-31">
+						<a href="#">
+							Forgot password?
+						</a>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button type="submit" name="nye_login" class="login100-form-btn">
+								Login
+							</button>
+						</div>
+					</div>
 
-      <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
-      <!-- Jquery, Popper, Bootstrap -->
-      <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-      <script src="./assets/js/popper.min.js"></script>
-      <script src="./assets/js/bootstrap.min.js"></script>
-      <!-- Jquery Mobile Menu -->
-      <script src="./assets/js/jquery.slicknav.min.js"></script>
+					<div class="txt1 text-center p-t-54 p-b-20">
+						<span>
+							Login Using
+						</span>
+					</div>
 
-      <!-- Jquery Slick , Owl-Carousel Plugins -->
-      <script src="./assets/js/owl.carousel.min.js"></script>
-      <script src="./assets/js/slick.min.js"></script>
-      <!-- One Page, Animated-HeadLin -->
-      <script src="./assets/js/wow.min.js"></script>
-      <script src="./assets/js/animated.headline.js"></script>
-      <script src="./assets/js/jquery.magnific-popup.js"></script>
+					<div class="flex-c-m">
+						<a href="#" class="login100-social-item bg1">
+							<i class="fa fa-facebook"></i>
+						</a>
+						<a href="#" class="login100-social-item bg3">
+							<i class="fa fa-google"></i>
+						</a>
+					</div>
 
-      <!-- Date Picker -->
-      <script src="./assets/js/gijgo.min.js"></script>
-      <!-- Nice-select, sticky -->
-      <script src="./assets/js/jquery.nice-select.min.js"></script>
-      <script src="./assets/js/jquery.sticky.js"></script>
-      
-      <!-- counter , waypoint,Hover Direction -->
-      <script src="./assets/js/jquery.counterup.min.js"></script>
-      <script src="./assets/js/waypoints.min.js"></script>
-      <script src="./assets/js/jquery.countdown.min.js"></script>
-      <script src="./assets/js/hover-direction-snake.min.js"></script>
+					<div class="flex-col-c p-t-155">
+						<a href="signup.php" class="txt2">
+							Or Sign Up
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
 
-      <!-- contact js -->
-      <script src="./assets/js/contact.js"></script>
-      <script src="./assets/js/jquery.form.js"></script>
-      <script src="./assets/js/jquery.validate.min.js"></script>
-      <script src="./assets/js/mail-script.js"></script>
-      <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
-      
-      <!-- Jquery Plugins, main Jquery -->	
-      <script src="./assets/js/plugins.js"></script>
-      <script src="./assets/js/main.js"></script>
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="user/user_login_signin/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="user/user_login_signin/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="user/user_login_signin/vendor/bootstrap/js/popper.js"></script>
+	<script src="user/user_login_signin/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="user/user_login_signin/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="user/user_login_signin/vendor/daterangepicker/moment.min.js"></script>
+	<script src="user/user_login_signin/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="user/user_login_signin/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="user/user_login_signin/js/main.js"></script>
 
-     
-    </body>
+</body>
 </html>
